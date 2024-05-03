@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+    FreeDMR-YSF:
+        container_name: ADN2YSF_YSFTEST
+        environment:
+          - MM_YSF_SERVER=170.187.157.191
+          - MM_YSF_PORT=42300
+          - MM_DMR_SERVER=7221.adn.systems
+          - MM_DMR_PORT=62031
+          - MM_CALL=LW6EMN
+          - MM_ID=7221071
+          - MM_TG=7221
+          - MM_OPTIONS="TS2=7221;DIAL=0;VOICE=0;LANG=es_ES;SINGLE=1;"
+          - FD_LOCALREFLECTOR=1
+          - MM_LOCATION=Cruce YSF-TEST
+        image: 'lw6emn/cruceysf:1.0'
+        restart: "unless-stopped"
+
